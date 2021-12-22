@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://www.kaggle.com/c/house-prices-advanced-regression-techniques/submissions -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  
+  
+  
+    
+  
+  <script type="text/javascript" async="" src="./House Prices - Advanced Regression Techniques _ Kaggle_files/js" nonce=""></script><script src="./House Prices - Advanced Regression Techniques _ Kaggle_files/cb=gapi.loaded_0" nonce="" async=""></script><script type="text/javascript" async="" src="./House Prices - Advanced Regression Techniques _ Kaggle_files/analytics.js.download" nonce=""></script><script nonce="" type="text/javascript">
+    window["pageRequestStartTime"] = 1640157528149;
+    window["pageRequestEndTime"] = 1640157528165;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin="anonymous"><link rel="preconnect" href="https://stats.g.doubleclick.net/"><link rel="preconnect" href="https://storage.googleapis.com/"><link rel="preconnect" href="https://apis.google.com/">
+  <link href="https://www.kaggle.com/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link rel="manifest" href="https://www.kaggle.com/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./House Prices - Advanced Regression Techniques _ Kaggle_files/icon" rel="preload" as="style">
+  <link href="./House Prices - Advanced Regression Techniques _ Kaggle_files/css" rel="preload" as="style">
+  <link href="./House Prices - Advanced Regression Techniques _ Kaggle_files/icon" rel="stylesheet" media="all" id="async-google-font-1">
+  <link href="./House Prices - Advanced Regression Techniques _ Kaggle_files/css" rel="stylesheet" media="all" id="async-google-font-2">
+  <script nonce="" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+    <link rel="stylesheet" type="text/css" href="./House Prices - Advanced Regression Techniques _ Kaggle_files/vendor.css">
+    <link rel="stylesheet" type="text/css" href="./House Prices - Advanced Regression Techniques _ Kaggle_files/app.css">
+  
+    
+ 
+  
+    <script nonce="">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script><style></style><style></style>
+    <script nonce="">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-12629138-1', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Competitions'
+        });
+    </script>
+    <script nonce="" async="" src="./House Prices - Advanced Regression Techniques _ Kaggle_files/js(1)"></script>
+
+  
+    
+
+   
+  
+    
+
+  
+    
+
+  
+    
+    
+<script nonce="" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+
+    Kaggle.Current = {
+        userId: 8118383,
+        userProfileUrl: '/ramyasubramanya',
+        userDisplayNameEscaped: 'Ramya Subramanya',
+        userThumbnailUrl: 'https://storage.googleapis.com/kaggle-avatars/thumbnails/8118383-kg.jpg',
+        userEmail: 'ramya.raonks@outlook.com',
+        userIsPhoneVerified: true,
+        userName: 'ramyasubramanya',
+        tier: 'Novice',
+        antiForgeryToken: 'CfDJ8LdUzqlsSWBPr4Ce3rb9VL9-7DGi_xQ7GjoInx3ul816SDZY5VLfKQqfbmubHU2nfxdQ2v77b1iC1dTqBduddnayZb1HR9fWI__1jdOSyirJV6cBkby5x-MDbL3-rcvD91H59LnqNYRyoXlhxoq9jQzUPO53elikuS2l-KLhsflLu9lSy1F-VUV9_gEy_rIFtQ',
+        isAnonymous: false,
+        analyticsToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDAxNTg0MjgsIlVzZXJJZCI6ODExODM4M30.WznyiENzS3D8ePdz900_qIt2c3ERodEUx24uZHAuiTs',
+        analyticsTokenExpiry: 15,
+        
+        
+        
+        
+        
+        
+        
+        enableRapidash: true, 
+    }
+        Kaggle.Current.log = function(){};
+        Kaggle.Current.warn = function(){};
+
+    var decodeUserDisplayName = function () {
+        var escapedUserDisplayName = Kaggle.Current.userDisplayNameEscaped || "";
+        try {
+            var textVersion = new DOMParser().parseFromString(escapedUserDisplayName, "text/html").documentElement.textContent;
+            if (textVersion) {
+                return textVersion;
+            }
+        } catch(ex) {}
+        return escapedUserDisplayName;
+    }
+    Kaggle.Current.userDisplayName = decodeUserDisplayName();
+</script>
+
+    
+
+<script nonce="" type="text/javascript">
+    var Kaggle = window.Kaggle || {};
+    Kaggle.PageMessages = [];
+</script>
+
+
+
+    <script nonce="">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="" src="./House Prices - Advanced Regression Techniques _ Kaggle_files/api.js.download" defer="" async="" gapi_processed="true"></script>
+  <script nonce="" src="./House Prices - Advanced Regression Techniques _ Kaggle_files/runtime.js.download" data-turbolinks-track="reload"></script>
+  <script nonce="" src="./House Prices - Advanced Regression Techniques _ Kaggle_files/vendor.js.download" data-turbolinks-track="reload"></script>
+  <script nonce="" src="./House Prices - Advanced Regression Techniques _ Kaggle_files/app.js.download" data-turbolinks-track="reload"></script>
+    <script nonce="" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '8118383'
+      }
+    </script>
+<link rel="stylesheet" type="text/css" href="./House Prices - Advanced Regression Techniques _ Kaggle_files/4606.0b070b6d0627c3947756.css"><link rel="stylesheet" type="text/css" href="./House Prices - Advanced Regression Techniques _ Kaggle_files/2775.bb0f3cd266fcb6b8c18b.css"><link rel="stylesheet" type="text/css" href="./House Prices - Advanced Regression Techniques _ Kaggle_files/2799.40cd53cc41bfe35384e1.css"><link rel="stylesheet" type="text/css" href="./House Prices - Advanced Regression Techniques _ Kaggle_files/competitionsApp.0ee55c723b2d8ac67383.css"><style data-styled="active" data-styled-version="5.3.0"></style><link rel="stylesheet" type="text/css" href="./House Prices - Advanced Regression Techniques _ Kaggle_files/4.203e4ddbf8e58555799c.css"><link rel="stylesheet" type="text/css" href="./House Prices - Advanced Regression Techniques _ Kaggle_files/15.0ee55c723b2d8ac67383.css"><style data-react-tooltip="true">.__react_component_tooltip {
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 13px;
+  left: -999em;
+  opacity: 0;
+  padding: 8px 21px;
+  position: fixed;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+  top: -999em;
+  visibility: hidden;
+  z-index: 999;
+}
+.__react_component_tooltip.allow_hover, .__react_component_tooltip.allow_click {
+  pointer-events: auto;
+}
+.__react_component_tooltip::before, .__react_component_tooltip::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.__react_component_tooltip.show {
+  opacity: 0.9;
+  margin-top: 0;
+  margin-left: 0;
+  visibility: visible;
+}
+.__react_component_tooltip.place-top::before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -10px;
+}
+.__react_component_tooltip.place-bottom::before {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -8px;
+  left: 50%;
+  margin-left: -10px;
+}
+.__react_component_tooltip.place-left::before {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  right: -8px;
+  top: 50%;
+  margin-top: -5px;
+}
+.__react_component_tooltip.place-right::before {
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  left: -8px;
+  top: 50%;
+  margin-top: -5px;
+}
+.__react_component_tooltip .multi-line {
+  display: block;
+  padding: 2px 0;
+  text-align: center;
+}</style><link href="./House Prices - Advanced Regression Techniques _ Kaggle_files/icon" rel="stylesheet" media="print" id="async-google-font-1"><link href="./House Prices - Advanced Regression Techniques _ Kaggle_files/css" rel="stylesheet" media="print" id="async-google-font-2"><link rel="stylesheet" type="text/css" href="./House Prices - Advanced Regression Techniques _ Kaggle_files/3777.dd89bb16652c78b5403c.css"><title>House Prices - Advanced Regression Techniques | Kaggle</title><meta name="robots" content="index, follow"><meta name="description" content="Predict sales prices and practice feature engineering, RFs, and gradient boosting"><meta name="turbolinks-cache-control" content="no-cache"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"><meta name="theme-color" content="#008ABC"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@kaggle"><meta name="twitter:creator" content="@kaggle"><meta name="og:url" content="https://kaggle.com/c/house-prices-advanced-regression-techniques"><meta name="og:title" content="House Prices - Advanced Regression Techniques"><meta name="og:description" content="Predict sales prices and practice feature engineering, RFs, and gradient boosting"><meta name="og:image" content="https://storage.googleapis.com/kaggle-competitions/kaggle/5407/logos/thumb76_76.png"><meta name="twitter:site" content="@Kaggle"><link rel="stylesheet" type="text/css" href="./House Prices - Advanced Regression Techniques _ Kaggle_files/8405.4c09ef25a0bcc830f0b8.css"><link rel="stylesheet" type="text/css" href="./House Prices - Advanced Regression Techniques _ Kaggle_files/762.3092613c9d0debaa9331.css"></head>
+
+<body data-turbolinks="false">
+  <main>
+    
+
+
+
+
+
+
+<div id="site-container"><div style="--mdc-theme-on-primary:#fff; --mdc-theme-on-surface:rgba(0, 0, 0, 0.87); --mdc-theme-text-primary-on-background:rgba(0, 0, 0, 0.87); --mdc-theme-text-secondary-on-background:rgba(0, 0, 0, 0.54); --mdc-theme-text-hint-on-background:rgba(0, 0, 0, 0.38); --mdc-theme-text-disabled-on-background:rgba(0, 0, 0, 0.38); --mdc-theme-text-icon-on-background:rgba(0, 0, 0, 0.38); --mdc-theme-primary:#20BEFF; --mdc-theme-error:#F58B8A; --mdc-theme-background:#F8F8F8; --mdc-theme-surface:#fff; --mdc-theme-primary-bg:#20BEFF; --mdc-theme-secondary-bg:#919294;"><div class="sc-ellfGf eQnPJL"><div class="sc-kizEQm fojYHw"><div class="sc-cbeScs fNvcGj"><div class="sc-hkeOVe grtTEg"><button aria-label="menu" class="sc-jSFjdj SCuyd undefined google-material-icons">menu</button></div><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/submissions#site-content" class="sc-htmcrh emRwHY">Skip to<br>content</a><div class="sc-gVFcvn iAkyYK"><a href="https://www.kaggle.com/"><img src="./House Prices - Advanced Regression Techniques _ Kaggle_files/site-logo.png" alt="Kaggle" class="sc-dTSzeu krkYvd"></a></div></div></div><div class="sc-cKRKFl kSUooD"><div class="sc-iIgjPs czWPLt"><div class="sc-jtiXyc bdGDdI"><div class="sc-iGkqmO hLdRoL"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-kTCsyW kmgTrK">search</i><input placeholder="Search" aria-label="Search" class="sc-irKDMX fyRspk" value=""></div></div></div><div class="sc-gstuGz tcgHY"><div class="sc-fXgAZx erAkNO"><div class="sc-EZqKI ezzTEu"><div class="sc-hzUIXc jSTRnN"><img class="sc-cTJkRt iNQKHV" src="./House Prices - Advanced Regression Techniques _ Kaggle_files/8118383-kg.jpg" alt="Profile picture for undefined" role="button" tabindex="0"></div></div></div></div></div></div><div class="sc-jLqRGG sc-fxFQKN gtTSsX cWNuFw"><div class="sc-fyGvY fLibQH"><div class="sc-cbeScs fNvcGj"><div class="sc-hkeOVe grtTEg"><button aria-label="menu" class="sc-jSFjdj SCuyd undefined google-material-icons">menu</button></div><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/submissions#site-content" class="sc-htmcrh emRwHY">Skip to<br>content</a><div class="sc-gVFcvn iAkyYK"><a href="https://www.kaggle.com/"><img src="./House Prices - Advanced Regression Techniques _ Kaggle_files/site-logo.png" alt="Kaggle" class="sc-dTSzeu krkYvd"></a></div></div></div><div class="sc-cjzNjn cIJaKN"><button class="sc-bUQyIj jUQESp"><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 30L20 16L16 20L16 30L20 30Z" fill="#20BEFF"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M20 20L30 20L30 16L20 16L20 20Z" fill="#20BEFF"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M16 20L20 16L15.937 16L6 16L6 20L16 20Z" fill="#20BEFF"></path><rect x="20" y="16" width="4" height="10" transform="rotate(-180 20 16)" fill="#20BEFF"></rect></svg><span class="sc-iJCRrE sc-giAqHp sc-tsGVs iDwXPD bYgUJS hNouay">Create</span></button><div aria-hidden="true" class="mdc-menu sc-jHNicF bnmAXo sc-dSnXvR dzBcKB mdc-menu-surface" style="transform-origin: left top; left: 0px; top: 0px; max-height: 682px;"><div role="menu" class="mdc-list mdc-menu__items mdc-list"><div role="menuitem" tabindex="0" class="sc-GvhzO bpDBPH mdc-ripple-upgraded sc-GvhzO bpDBPH mdc-list-item"><div class="sc-bXexck kmvQjn"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-gsWcmt grZHMV">code</i><p class="sc-bCwfaz sc-iwajpm jLqmUy kydRHc">New Notebook</p></div></div><div role="menuitem" tabindex="0" class="sc-GvhzO bpDBPH mdc-ripple-upgraded sc-GvhzO bpDBPH mdc-list-item"><div class="sc-bXexck kmvQjn"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-gsWcmt grZHMV">table_chart</i><p class="sc-bCwfaz sc-iwajpm jLqmUy kydRHc">New Dataset</p></div></div></div></div></div><div class="sc-igOmtu bDNEth"><div class="sc-gGuRsA fEtmZj"><div class="sc-gGGFjW gAApEQ"><div class="sc-dksuTV fUsfKe"><div class="sc-jtiXyc bdGDdI"><div class="sc-iGkqmO hLdRoL"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-kTCsyW kmgTrK">search</i><input placeholder="Search" aria-label="Search" class="sc-irKDMX fyRspk" value=""></div></div></div><ul class="km-list"><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">explore</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">Home</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif gGxnHS sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/competitions"><i emphasis="high" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-JsfZP kBcPwt">emoji_events</i><p class="sc-kfYoZR sc-fKgJPI jaxPpm cxbltl" style="padding-left: 20px;">Competitions</p><div class="sc-hYRTwp kxklKl"></div></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/datasets"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">table_chart</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">Datasets</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/code"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">code</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">Code</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/discussion"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">comment</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">Discussions</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/learn"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">school</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">Courses</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/submissions#"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">expand_more</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">More</p></a></div></li></ul></div><div><div class="sc-hKiEVl ldjOpi sc-bFSbwS bAKETB"></div><ul style="padding-bottom: 36px;"><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-cGKJhA fHgjJA"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/ramyasubramanya"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt sc-JsfZP kBcPwt">note_alt</i><p class="sc-kfYoZR sc-fKgJPI gpHTvJ cxbltl" style="padding-left: 20px;">Your Work</p></a></div></li><li><ul class="km-list km-list--dense sc-eiQWpL fnfwcX"><li tabindex="0" class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-dkiSSI ibkFXD"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt">arrow_drop_down</i><span class="sc-ciSkZP sc-jcwpoC sc-cVJgsR PGXfO kyvWZW ewjAsp">Recently Viewed</span></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-kHVIJG jNudlt"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/karangadiya/fifa19?rvi=1"><img src="./House Prices - Advanced Regression Techniques _ Kaggle_files/dataset-thumbnail.jpg" alt="FIFA 19 complete player dataset" width="20" height="20" class="sc-gXZlLH eDIGju"><p class="sc-bCwfaz sc-iwajpm sc-ktvWjP eTBoyV kydRHc jfhxYY">FIFA 19 complete player dataset</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-kHVIJG jNudlt"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/shivamb/disney-movies-and-tv-shows?rvi=1"><img src="./House Prices - Advanced Regression Techniques _ Kaggle_files/dataset-thumbnail(1).jpg" alt="Disney+ Movies and TV Shows" width="20" height="20" class="sc-gXZlLH eDIGju"><p class="sc-bCwfaz sc-iwajpm sc-ktvWjP eTBoyV kydRHc jfhxYY">Disney+ Movies and TV Shows</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-kHVIJG jNudlt"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/kalilurrahman/facebook-stock-data-live-and-latest?rvi=1"><img src="./House Prices - Advanced Regression Techniques _ Kaggle_files/dataset-thumbnail.png" alt="Facebook Stock Data - Live and Latest" width="20" height="20" class="sc-gXZlLH eDIGju"><p class="sc-bCwfaz sc-iwajpm sc-ktvWjP eTBoyV kydRHc jfhxYY">Facebook Stock Data - Live and Latest</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-kHVIJG jNudlt"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/dark06thunder/credit-card-dataset?rvi=1"><img src="./House Prices - Advanced Regression Techniques _ Kaggle_files/dataset-thumbnail(2).png" alt="Credit-card-Fraud Detection-Imbalanced-Dataset" width="20" height="20" class="sc-gXZlLH eDIGju"><p class="sc-bCwfaz sc-iwajpm sc-ktvWjP eTBoyV kydRHc jfhxYY">Credit-card-Fraud Detection-Imbalanced-Dataset</p></a></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-kHVIJG jNudlt"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/rohitrox/healthcare-provider-fraud-detection-analysis?rvi=1"><img src="./House Prices - Advanced Regression Techniques _ Kaggle_files/dataset-thumbnail(3).png" alt=" HEALTHCARE PROVIDER FRAUD DETECTION ANALYSIS" width="20" height="20" class="sc-gXZlLH eDIGju"><p class="sc-bCwfaz sc-iwajpm sc-ktvWjP eTBoyV kydRHc jfhxYY"> HEALTHCARE PROVIDER FRAUD DETECTION ANALYSIS</p></a></div></li></ul></li><li><ul class="km-list km-list--dense sc-eiQWpL fnfwcX"><li tabindex="0" class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-dkiSSI ibkFXD"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt">arrow_drop_down</i><span class="sc-ciSkZP sc-jcwpoC sc-cVJgsR PGXfO kyvWZW ewjAsp">Recently Edited</span></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-kHVIJG jNudlt"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/ramyasubramanya/exercise-linear-regression-with-time-series?rvi=1"><img src="./House Prices - Advanced Regression Techniques _ Kaggle_files/8118383-kg.jpg" alt="Exercise: Linear Regression With Time Series" width="20" height="20" class="sc-gXZlLH dYCCMG"><p class="sc-bCwfaz sc-iwajpm sc-ktvWjP eTBoyV kydRHc jfhxYY">Exercise: Linear Regression With Time Series</p></a></div></li></ul></li><li><ul class="km-list km-list--dense sc-eiQWpL fnfwcX"><li tabindex="0" class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-dkiSSI ibkFXD"><i emphasis="low" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy yTsEt">arrow_drop_down</i><span class="sc-ciSkZP sc-jcwpoC sc-cVJgsR PGXfO kyvWZW ewjAsp">Bookmarks</span></div></li><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-kHVIJG jNudlt"><a class="sc-jgPyTC fuJtcf" href="https://www.kaggle.com/imakash3011/customer-personality-analysis"><img src="./House Prices - Advanced Regression Techniques _ Kaggle_files/5270083-kg.jpg" alt="Customer Personality Analysis" width="20" height="20" class="sc-gXZlLH dYCCMG"><p class="sc-bCwfaz sc-iwajpm sc-ktvWjP eTBoyV kydRHc jfhxYY">Customer Personality Analysis</p></a></div></li></ul></li></ul></div></div><div class="sc-dbXCOC fCfyBJ"><div class="mdc-menu-surface--anchor"><button class="sc-jfkLlK ffojhM"><div class="sc-biHcxt duZDU"><i emphasis="high" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-hfVBHA cUtlan">auto_awesome_motion</i><div color="#FAE041" class="sc-fiCYzP dwjhCT">0</div></div><p class="sc-kfYoZR sc-fKgJPI sc-fnebDD gpHTvJ cxbltl iVqlfM">View Active Events</p></button></div></div></div></div><div data-testid="searchContainer" class="sc-cBsszO ektXnU"><div></div><div class="sc-ganJan jILsmh"><div></div></div></div><div id="site-content" class="sc-hGwcmR fsfkoY"><div class="sc-iuImSO kjhMak"></div><div id="site-body" class="">
+    
+
+
+<div data-component-name="CompetitionContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"isOngoingCompetition":true,"competitionId":5407,"competitionType":"prediction","competitionTitle":"House Prices - Advanced Regression Techniques","briefDescription":"Predict sales prices and practice feature engineering, RFs, and gradient boosting","competitionHeaderImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/5407/logos/header.png?t=2021-04-23-18-16-53","organizationId":4,"organizationName":"Kaggle","organizationThumbnailUrl":"https://storage.googleapis.com/kaggle-organizations/4/thumbnail.png","hasAcceptedRules":true,"dateEnabled":"2016-08-30T01:08:56.763Z","deadline":"2030-01-01T00:00:00Z","mergerDeadline":"2030-01-01T00:00:00Z","newEntrantDeadline":null,"rewardQuantity":0.0,"rewardTypeName":"Knowledge","totalTeams":5405,"isInClass":false,"hostSegment":"gettingStarted","canEdit":false,"canEditMetadata":false,"rules":{"id":13544,"postId":49115,"content":"\u003c!-- Begin Base Rules --\u003e\n\u003ch3\u003eOne account per participant\u003c/h3\u003e\n\u003cp\u003eYou cannot sign up to Kaggle from multiple accounts and therefore you cannot submit from multiple accounts.\u003c/p\u003e\n\u003ch3\u003eNo private sharing outside teams\u003c/h3\u003e\n\u003cp\u003ePrivately sharing code or data outside of teams is not permitted. It\u0027s okay to share code if made available to all participants on the forums.\u003c/p\u003e\n\u003ch3\u003eTeam Mergers\u003c/h3\u003e\n\u003cp\u003eTeam mergers are allowed and can be performed by the team leader. In order to merge, the combined team must have a total submission count less than or equal to the maximum allowed as of the merge date. The maximum allowed is the number of submissions per day multiplied by the number of days the competition has been running.\u003c/p\u003e\n\u003ch3\u003eTeam Limits\u003c/h3\u003e\n\u003cp\u003eThere is no maximum team size.\u003c/p\u003e\n\u003ch3\u003eSubmission Limits\u003c/h3\u003e\n\u003cp\u003eYou may submit a maximum of 5 entries per day.\u003c/p\u003e\n\u003cp\u003eYou may select up to 2 final submissions for judging.\u003c/p\u003e\n\u003ch3\u003eCompetition Timeline\u003c/h3\u003e\n\u003cp\u003eStart Date: \u003cstrong\u003e8/30/2016 1:08 AM UTC\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eMerger Deadline: \u003cstrong\u003eNone\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eEntry Deadline: \u003cstrong\u003eNone\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003eEnd Date: \u003cstrong\u003eNone\u003c/strong\u003e\u003c/p\u003e\n\u003c!-- End Base Rules --\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cspan style=\u0022font-size: 1em; line-height: 1.5em;\u0022\u003eDue to the public nature of the data, this competition does not count towards Kaggle ranking points.\u003c/span\u003e\u003c/li\u003e\n\u003cli\u003e\u003cspan style=\u0022font-size: 1em; line-height: 1.5em;\u0022\u003eWe ask that you respect the spirit of the competition and do not cheat. Hand-labeling is forbidden.\u003c/span\u003e\u003c/li\u003e\n\u003c/ul\u003e","mimeType":"text/html","name":"rules","isPublished":null},"dataIntro":{"id":13540,"postId":49111,"content":"\u003ch2\u003eFile descriptions\u003c/h2\u003e\r\n\u003cul\u003e\r\n\u003cli\u003e\u003cstrong\u003etrain.csv\u003c/strong\u003e - the training set\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003etest.csv\u003c/strong\u003e - the test set\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003edata_description.txt\u003c/strong\u003e - full description of each column, originally prepared by Dean De Cock but lightly edited to match the column names used here\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003esample_submission.csv\u003c/strong\u003e - a benchmark submission from a linear regression on year and month of sale, lot square footage, and number of bedrooms\u003c/li\u003e\r\n\u003c/ul\u003e\r\n\u003ch2\u003eData fields\u003c/h2\u003e\r\n\u003cp\u003eHere\u0027s a brief version of what you\u0027ll find in the data description file.\u003c/p\u003e\r\n\u003cul\u003e\r\n\u003cli\u003e\u003cstrong\u003eSalePrice\u003c/strong\u003e - the property\u0027s sale price in dollars. This is the target variable that you\u0027re trying to predict.\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eMSSubClass\u003c/strong\u003e: The building class\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eMSZoning\u003c/strong\u003e: The general zoning classification\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eLotFrontage\u003c/strong\u003e: Linear feet of street connected to property\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eLotArea\u003c/strong\u003e: Lot size in square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eStreet\u003c/strong\u003e: Type of road access\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eAlley\u003c/strong\u003e: Type of alley access\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eLotShape\u003c/strong\u003e: General shape of property\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eLandContour\u003c/strong\u003e: Flatness of the property\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eUtilities\u003c/strong\u003e: Type of utilities available\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eLotConfig\u003c/strong\u003e: Lot configuration\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eLandSlope\u003c/strong\u003e: Slope of property\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eNeighborhood\u003c/strong\u003e: Physical locations within Ames city limits\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eCondition1\u003c/strong\u003e: Proximity to main road or railroad\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eCondition2\u003c/strong\u003e: Proximity to main road or railroad (if a second is present)\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eBldgType\u003c/strong\u003e: Type of dwelling\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eHouseStyle\u003c/strong\u003e: Style of dwelling\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eOverallQual\u003c/strong\u003e: Overall material and finish quality\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eOverallCond\u003c/strong\u003e: Overall condition rating\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eYearBuilt\u003c/strong\u003e: Original construction date\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eYearRemodAdd\u003c/strong\u003e: Remodel date\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eRoofStyle\u003c/strong\u003e: Type of roof\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eRoofMatl\u003c/strong\u003e: Roof material\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eExterior1st\u003c/strong\u003e: Exterior covering on house\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eExterior2nd\u003c/strong\u003e: Exterior covering on house (if more than one material)\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eMasVnrType\u003c/strong\u003e: Masonry veneer type\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eMasVnrArea\u003c/strong\u003e: Masonry veneer area in square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eExterQual\u003c/strong\u003e: Exterior material quality\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eExterCond\u003c/strong\u003e: Present condition of the material on the exterior\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eFoundation\u003c/strong\u003e: Type of foundation\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eBsmtQual\u003c/strong\u003e: Height of the basement\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eBsmtCond\u003c/strong\u003e: General condition of the basement\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eBsmtExposure\u003c/strong\u003e: Walkout or garden level basement walls\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eBsmtFinType1\u003c/strong\u003e: Quality of basement finished area\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eBsmtFinSF1\u003c/strong\u003e: Type 1 finished square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eBsmtFinType2\u003c/strong\u003e: Quality of second finished area (if present)\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eBsmtFinSF2\u003c/strong\u003e: Type 2 finished square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eBsmtUnfSF\u003c/strong\u003e: Unfinished square feet of basement area\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eTotalBsmtSF\u003c/strong\u003e: Total square feet of basement area\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eHeating\u003c/strong\u003e: Type of heating\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eHeatingQC\u003c/strong\u003e: Heating quality and condition\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eCentralAir\u003c/strong\u003e: Central air conditioning\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eElectrical\u003c/strong\u003e: Electrical system\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003e1stFlrSF\u003c/strong\u003e: First Floor square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003e2ndFlrSF\u003c/strong\u003e: Second floor square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eLowQualFinSF\u003c/strong\u003e: Low quality finished square feet (all floors)\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eGrLivArea\u003c/strong\u003e: Above grade (ground) living area square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eBsmtFullBath\u003c/strong\u003e: Basement full bathrooms\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eBsmtHalfBath\u003c/strong\u003e: Basement half bathrooms\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eFullBath\u003c/strong\u003e: Full bathrooms above grade\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eHalfBath\u003c/strong\u003e: Half baths above grade\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eBedroom\u003c/strong\u003e: Number of bedrooms above basement level\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eKitchen\u003c/strong\u003e: Number of kitchens\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eKitchenQual\u003c/strong\u003e: Kitchen quality\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eTotRmsAbvGrd\u003c/strong\u003e: Total rooms above grade (does not include bathrooms)\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eFunctional\u003c/strong\u003e: Home functionality rating\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eFireplaces\u003c/strong\u003e: Number of fireplaces\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eFireplaceQu\u003c/strong\u003e: Fireplace quality\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eGarageType\u003c/strong\u003e: Garage location\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eGarageYrBlt\u003c/strong\u003e: Year garage was built\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eGarageFinish\u003c/strong\u003e: Interior finish of the garage\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eGarageCars\u003c/strong\u003e: Size of garage in car capacity\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eGarageArea\u003c/strong\u003e: Size of garage in square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eGarageQual\u003c/strong\u003e: Garage quality\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eGarageCond\u003c/strong\u003e: Garage condition\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003ePavedDrive\u003c/strong\u003e: Paved driveway\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eWoodDeckSF\u003c/strong\u003e: Wood deck area in square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eOpenPorchSF\u003c/strong\u003e: Open porch area in square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eEnclosedPorch\u003c/strong\u003e: Enclosed porch area in square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003e3SsnPorch\u003c/strong\u003e: Three season porch area in square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eScreenPorch\u003c/strong\u003e: Screen porch area in square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003ePoolArea\u003c/strong\u003e: Pool area in square feet\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003ePoolQC\u003c/strong\u003e: Pool quality\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eFence\u003c/strong\u003e: Fence quality\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eMiscFeature\u003c/strong\u003e: Miscellaneous feature not covered in other categories\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eMiscVal\u003c/strong\u003e: $Value of miscellaneous feature\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eMoSold\u003c/strong\u003e: Month Sold\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eYrSold\u003c/strong\u003e: Year Sold\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eSaleType\u003c/strong\u003e: Type of sale\u003c/li\u003e\r\n\u003cli\u003e\u003cstrong\u003eSaleCondition\u003c/strong\u003e: Condition of sale\u003c/li\u003e\r\n\u003c/ul\u003e","mimeType":"","name":"data-description","isPublished":null},"competitionSlug":"house-prices-advanced-regression-techniques","numPrizes":1,"leaderboardPercentage":100,"hasLimitedParticipation":false,"discussion":{"canDownvote":false,"dataUrl":"/forums/1469/topics.json","id":1469,"showSubscribeButton":false,"isSubscribed":false,"subscription":"unsubscribe","paramValues":{"page":1,"search":null,"group":"all","sortBy":"hot","category":"all"}},"competitionThumbnailImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/5407/logos/thumb76_76.png","newTopic":{"allowAttachments":true,"authorTier":"novice","authorType":"topic","forumId":1469,"parentName":"House Prices - Advanced Regression Techniques","parentUrl":"/c/house-prices-advanced-regression-techniques/discussion","isPrivate":false},"numScoredSubmissions":5,"maxDailySubmissions":10,"maxDailySubmissionsResetDate":"2021-12-23T00:00:00Z","remainingDailySubmissions":10,"totalSolutionRows":1459,"team":{"id":7608661,"name":"Ramya Subramanya","canCreateMerger":true,"members":[{"userId":8118383,"displayName":"Ramya Subramanya","userUrl":"/ramyasubramanya","avatarUrl":"https://storage.googleapis.com/kaggle-avatars/thumbnails/8118383-kg.jpg","tier":"novice","isTeamLeader":true}]},"maxTeamSize":2147483647,"topicTitle":null,"totalCompetitors":5662,"totalEntries":31593,"countsTowardsRanking":false,"countsTowardsTiers":false,"evaluationAlgorithm":{"id":8,"abbreviation":"RMSLE","name":"Root Mean Squared Logarithmic Error","description":"Square root of the average of the squared natural logarithm (plus one) error. Useful when it\u0027s more important to accurately predict lower magnitude values rather than precisely predicting higher magnitude values.","isMax":false,"isPublic":true,"submissionFileFormatId":0,"competitionId":0,"requiresSameRowCountInSubmissionAndSolution":true,"solutionSchema":"\u003cdataFrameSchema\u003e\u003ccolumnDefinitions\u003e\u003ccolumnDefinition name=\u0022Id\u0022 isRequired=\u0022true\u0022 isKey=\u0022true\u0022 requiredDataType=\u0022System.Reflection.Missing\u0022 /\u003e\u003ccolumnDefinition name=\u0022Expected\u0022 allowMultipleColumns=\u0022true\u0022 isRequired=\u0022true\u0022 requiredDataType=\u0022System.Double\u0022 /\u003e\u003c/columnDefinitions\u003e\u003c/dataFrameSchema\u003e","submissionSchema":"\u003cdataFrameSchema\u003e\u003ccolumnDefinitions\u003e\u003ccolumnDefinition name=\u0022Id\u0022 isRequired=\u0022true\u0022 isKey=\u0022true\u0022 requiredDataType=\u0022System.Reflection.Missing\u0022 /\u003e\u003ccolumnDefinition name=\u0022Predicted\u0022 allowMultipleColumns=\u0022true\u0022 isRequired=\u0022true\u0022 requiredDataType=\u0022System.Double\u0022 /\u003e\u003c/columnDefinitions\u003e\u003c/dataFrameSchema\u003e","parametersSchema":"\u003cparametersSchema type=\u0022Kaggle.Metrics.EmptyEvaluationAlgorithmParameters\u0022 /\u003e","dateModified":"2021-12-14T18:07:28.8945573Z","requiresSpecialHandling":false,"isEnvironment":false,"environmentConfiguration":null,"environmentNumPlayersSpec":null,"environmentRenderType":"json"},"allowPrivateLeaderboardDisplay":false,"isCreatingCompetition":false,"pages":[{"id":13541,"postId":8760395,"content":"\u003ch3\u003eStart here if...\u003c/h3\u003e\n\u003cp\u003eYou have some experience\u0026nbsp;with R or Python and\u0026nbsp;machine learning basics. This is a perfect competition for data science students\u0026nbsp;who have completed an online course in machine learning and are looking to expand their skill set before trying a featured competition.\u0026nbsp;\u003c/p\u003e\n\u003ch3\u003eCompetition Description\u003c/h3\u003e\n\u003cp\u003e\u003cimg src=\u0022https://storage.googleapis.com/kaggle-competitions/kaggle/5407/media/housesbanner.png\u0022 style=\u0022display: block; margin-left: auto; margin-right: auto\u0022\u003e\u003c/p\u003e\n\u003cp\u003eAsk a home buyer to describe their dream house, and they probably won\u0027t begin with the height of the basement ceiling or the proximity to an east-west railroad. But this playground competition\u0027s dataset proves that much more influences price negotiations than the number of bedrooms or a white-picket fence.\u003c/p\u003e\n\u003cp\u003eWith 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this competition challenges you to predict the final price of each home.\u003c/p\u003e\n\u003ch3\u003ePractice Skills\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003eCreative feature engineering\u0026nbsp;\u003c/li\u003e\n\u003cli\u003eAdvanced regression techniques like random forest and gradient boosting\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch2\u003eAcknowledgments\u003c/h2\u003e\n\u003cp\u003eThe \u003ca href=\u0022http://www.amstat.org/publications/jse/v19n3/decock.pdf\u0022 target=\u0022_blank\u0022\u003eAmes Housing\u0026nbsp;dataset\u003c/a\u003e\u0026nbsp;was compiled\u0026nbsp;by Dean De Cock for use in data science education. It\u0027s an incredible alternative\u0026nbsp;for data scientists looking for a modernized and expanded version of the often cited Boston Housing dataset.\u0026nbsp;\u003c/p\u003e\n\n\u003cp\u003ePhoto by \u003ca href=\u0022https://unsplash.com/@tthfilms\u0022\u003eTom Thain\u003c/a\u003e on Unsplash.\u003c/p\u003e","mimeType":"text/html","name":"description","isPublished":true},{"id":13542,"postId":3508703,"content":"\u003ch3\u003eGoal\u003c/h3\u003e\n\u003cp\u003eIt is your job to predict the sales price for each house.\u0026nbsp;For each Id in the test set, you must predict the value of the SalePrice variable.\u0026nbsp;\u003c/p\u003e\n\u003ch3\u003eMetric\u003c/h3\u003e\n\u003cp\u003eSubmissions are evaluated on \u003ca href=\u0022https://en.wikipedia.org/wiki/Root-mean-square_deviation\u0022 target=\u0022_blank\u0022\u003eRoot-Mean-Squared-Error (RMSE)\u003c/a\u003e\u0026nbsp;between the logarithm of the predicted value\u0026nbsp;and the logarithm of the observed sales price. (Taking logs means that errors in predicting expensive houses and cheap houses will affect the result equally.)\u003c/p\u003e\n\u003ch3\u003eSubmission File Format\u003c/h3\u003e\n\u003cp\u003eThe file should contain a header and have the following format:\u003c/p\u003e\n\u003cpre\u003eId,SalePrice\u003cbr\u003e1461,169000.1\u003cbr\u003e1462,187724.1233\u003cbr\u003e1463,175221\u003cbr\u003eetc.\u003c/pre\u003e\n\u003cp\u003eYou can download an example submission file (sample_submission.csv) on the\u0026nbsp;\u003ca href=\u0022https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data\u0022 target=\u0022_blank\u0022\u003eData page.\u003c/a\u003e\u003c/p\u003e","mimeType":"text/html","name":"evaluation","isPublished":true},{"id":13552,"postId":3508704,"content":"\u003ch3\u003eKaggle Learn\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\u0022https://www.kaggle.com/learn\u0022 target=\u0022_blank\u0022\u003e\u003cb\u003eKaggle Learn\u003c/b\u003e\u003c/a\u003e offers hands-on courses for most data science topics. These short courses prepare you with the key ideas to build your own projects. \u003c/p\u003e\n\u003cp\u003eThe \u003ca href=\u0022https://www.kaggle.com/learn/machine-learning\u0022 target=\u0022_blank\u0022\u003e\u003cb\u003eMachine Learning Course\u003c/b\u003e\u003c/a\u003e will give you everything you need to succeed in this competition and others like it.\u003c/p\u003e \n\n\u003ch3\u003eOther R Tutorials\u003c/h3\u003e\n\n\u003cb\u003e\u003ca href=\u0022https://www.kaggle.com/skirmer/house-prices-advanced-regression-techniques/fun-with-real-estate-data\u0022 target=\u0022_blank\u0022\u003eFun with Real Estate Data\u003c/a\u003e\u003c/b\u003e\n\u003cul\u003e \n\u003cli\u003eUse Rmarkdown to learn advanced regression techniques like random forests and  \u003ca href=\u0022https://github.com/dmlc/xgboost\u0022 target=\u0022_blank\u0022\u003eXGBoost\u003c/a\u003e\n\u003c/li\u003e\u003c/ul\u003e \n\n\u003cb\u003e\u003ca href=\u0022https://www.kaggle.com/jiashenliu/house-prices-advanced-regression-techniques/updated-xgboost-with-parameter-tuning/run/362252\u0022 target=\u0022_blank\u0022\u003eXGBoost with Parameter Tuning\u003c/a\u003e\u003c/b\u003e\n\u003cul\u003e\n\u003cli\u003eImplement LASSO regression to avoid multicollinearity\n\u003c/li\u003e\u003cli\u003eIncludes linear regression, random forest, and \u003ca href=\u0022https://github.com/dmlc/xgboost\u0022 target=\u0022_blank\u0022\u003eXGBoost\u003c/a\u003e models as well\u003c/li\u003e\n\u003c/ul\u003e\n\n\u003cb\u003e\u003ca href=\u0022https://www.kaggle.com/jimthompson/house-prices-advanced-regression-techniques/ensemble-model-stacked-model-example\u0022 target=\u0022_blank\u0022\u003eEnsemble Modeling: Stack Model Example\u003c/a\u003e\u003c/b\u003e\n\u003cul\u003e \n\u003cli\u003eUse \u0022\u003ca href=\u0022http://mlwave.com/kaggle-ensembling-guide/\u0022 target=\u0022_blank\u0022\u003eensembling\u003c/a\u003e\u0022 to combine the predictions of several models\n\u003c/li\u003e\u003cli\u003eIncludes GBM (gradient boosting machine),  \u003ca href=\u0022https://github.com/dmlc/xgboost\u0022 target=\u0022_blank\u0022\u003eXGBoost\u003c/a\u003e, ranger, and neural net using the \u003ca href=\u0022https://cran.r-project.org/web/packages/caret/index.html\u0022 target=\u0022_blank\u0022\u003ecaret package\u003c/a\u003e\n\u003c/li\u003e\u003c/ul\u003e\n\n\u003cb\u003e\u003ca href=\u0022https://www.kaggle.com/ozagordi/house-prices-advanced-regression-techniques/a-clear-example-of-overfitting\u0022 target=\u0022_blank\u0022\u003eA Clear Example of Overfitting\u003c/a\u003e\u003c/b\u003e\n\u003cul\u003e \n\u003cli\u003eLearn about the dreaded consequences of overfitting data\n\u003c/li\u003e\u003c/ul\u003e\n\n\u003ch3\u003eOther Python Tutorials\u003c/h3\u003e\n\u003cb\u003e\u003ca href=\u0022https://www.kaggle.com/pmarcelino/house-prices-advanced-regression-techniques/comprehensive-data-exploration-with-python\u0022 target=\u0022_blank\u0022\u003eComprehensive Data Exploration with Python\u003c/a\u003e\u003c/b\u003e\n\u003cul\u003e \n\u003cli\u003eUnderstand how variables are distributed and how they interact \n\u003c/li\u003e\u003cli\u003eApply different transformations before training machine learning models\n\u003c/li\u003e\u003c/ul\u003e\n\n\u003cb\u003e\u003ca href=\u0022https://www.kaggle.com/dgawlik/house-prices-advanced-regression-techniques/house-prices-eda\u0022 target=\u0022_blank\u0022\u003eHouse Prices EDA\u003c/a\u003e\u003c/b\u003e\n\u003cul\u003e \n\u003cli\u003eLearn to use visualization techniques to study missing data and distributions \n\u003c/li\u003e\u003cli\u003eIncludes correlation heatmaps, pairplots, and t-SNE to help inform appropriate inputs to a linear model\n\u003c/li\u003e\u003c/ul\u003e\n\n\u003cb\u003e\u003ca href=\u0022https://www.kaggle.com/juliencs/house-prices-advanced-regression-techniques/a-study-on-regression-applied-to-the-ames-dataset\u0022 target=\u0022_blank\u0022\u003eA Study on Regression Applied to the Ames Dataset\u003c/a\u003e\u003c/b\u003e\n\u003cul\u003e\n\u003cli\u003eDemonstrate effective tactics for feature engineering \n\u003c/li\u003e\u003cli\u003eExplore linear regression with different regularization methods including ridge, LASSO, and ElasticNet using \u003ca href=\u0022http://blog.kaggle.com/author/kevin-markham/\u0022 target=\u0022_blank\u0022\u003escikit-learn\u003c/a\u003e\n\u003c/li\u003e\u003c/ul\u003e\n\n\u003cb\u003e\u003ca href=\u0022https://www.kaggle.com/apapiu/house-prices-advanced-regression-techniques/regularized-linear-models\u0022 target=\u0022_blank\u0022\u003eRegularized Linear Models\u003c/a\u003e\u003c/b\u003e\n\u003cul\u003e \n\u003cli\u003eBuild a basic linear model \n\u003c/li\u003e\u003cli\u003eTry more advanced algorithms including \u003ca href=\u0022https://github.com/dmlc/xgboost\u0022 target=\u0022_blank\u0022\u003eXGBoost\u003c/a\u003e and neural nets using \u003ca href=\u0022https://keras.io/\u0022 target=\u0022_blank\u0022\u003eKeras\u003c/a\u003e\n\u003c/li\u003e\u003c/ul\u003e","mimeType":"text/html","name":"tutorials","isPublished":true},{"id":17314,"postId":3511223,"content":"\u003ch3\u003eWhat is a Getting Started competition? \u003c/h3\u003e\n\n\u003cp\u003eGetting Started competitions were created by Kaggle data scientists for people who have little to no machine learning background. They are a great place to begin if you are new to data science or just finished a MOOC and want to get involved in Kaggle.\u003c/p\u003e\n\n\u003cp\u003eGetting Started competitions are a non-competitive way to get familiar with Kaggle’s platform, learn basic machine learning concepts, and start meeting people in the community. They have no cash prize and are on a rolling timeline. \u003c/p\u003e\n\n\u003ch3\u003eWhat’s the difference between a private and public leaderboard?\u003c/h3\u003e\n\n\u003cp\u003eThe Kaggle leaderboard has a public and private component to prevent participants from “overfitting” to the leaderboard. If your model is “overfit” to a dataset then it is not generalizable outside of the dataset you trained it on. This means that your model would have low accuracy on another sample of data taken from a similar dataset.\u003c/p\u003e\n\n\u003cb\u003ePublic Leaderboard\u003c/b\u003e\n\u003cp\u003eFor all participants, the same 50% of predictions from the test set are assigned to the public leaderboard. The score you see on the public leaderboard reflects your model’s accuracy on this portion of the test set. \u003c/p\u003e\n\n\u003cb\u003ePrivate Leaderboard\u003c/b\u003e\n\u003cp\u003eThe other 50% of predictions from the test set are assigned to the private leaderboard. The private leaderboard is not visible to participants until the competition has concluded. At the end of a competition, we will reveal the private leaderboard so you can see your score on the other 50% of the test data. The scores on the private leaderboard are used to determine the competition winners. Getting Started competitions are run on a rolling timeline so the private leaderboard is never revealed.\u003c/p\u003e\n\n\u003ch3\u003eHow do I create and manage a team?\u003c/h3\u003e\n\u003cp\u003eWhen you accept the competition rules, a team will be created for you. You can invite others to your team, accept a merger with another team, and update basic information like team name by going to the More \u0026lt; \u003ca href=\u0022https://www.kaggle.com/c/house-prices-advanced-regression-techniques/team\u0022 target=\u0022_blank\u0022\u003eTeam\u003c/a\u003e page.\u003c/p\u003e\n\n\u003cp\u003eWe\u0027ve heard from many Kagglers that teaming up is the best way to learn new skills AND have fun. If you don\u0027t have a teammate already, consider asking if anyone wants to team up in the \u003ca href=\u0022https://www.kaggle.com/c/house-prices-advanced-regression-techniques/discussion\u0022 target=\u0022_blank\u0022\u003ediscussion forum\u003c/a\u003e. \u003c/p\u003e\n\n\u003ch3\u003eWhat are kernels?\u003c/h3\u003e\n\n\u003cp\u003eKaggle Kernels is a cloud computational environment that enables reproducible and collaborative analysis. Kernels supports scripts in R and Python, Jupyter Notebooks, and RMarkdown reports. Go to the \u003ca href=\u0022https://www.kaggle.com/c/house-prices-advanced-regression-techniques/kernels\u0022 target=\u0022_blank\u0022\u003eKernels tab\u003c/a\u003e to view all of the publicly shared code on this competition. For more on how to use Kernels to learn data science, visit the \u003ca href=\u0022https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview/tutorials\u0022 target=\u0022_blank\u0026gt;Tutorials tab\u0026lt;/a\u0026gt;.\u0026lt;/p\u0026gt;\n\n\u0026lt;h3\u0026gt;Why did my team disappear from the leaderboard?\u0026lt;/h3\u0026gt;\n\u0026lt;p\u0026gt;To keep with the spirit of getting-started competitions, we have implemented a two month rolling window on submissions. Once a submission is more than two months old, it will be invalidated and no longer count towards the leaderboard.\u0026lt;/p\u0026gt;\n\u0026lt;p\u0026gt;If your team has no submissions in the previous two months, the team will also drop from the leaderboard. This will keep the leaderboard at a manageable size, freshen it up, and prevent newcomers from getting lost in a sea of abandoned scores.\u0026lt;/p\u0026gt;\n\u0026lt;p\u0026gt;\u0026lt;i\u0026gt;\u0022\u003e Read more about our decision to implement a rolling leaderboard on getting started competitions \u003c/a\u003e\u003ca href=\u0022https://www.kaggle.com/c/titanic/discussion/6240\u0022 target=\u0022_blank\u0022\u003ehere\u003c/a\u003e.\u003c/p\u003e\n\n\u003ch3\u003eHow do I contact Support?\u003c/h3\u003e\n\u003cp\u003eKaggle does not have a dedicated support team so you’ll typically find that you receive a response more quickly by asking your question in the appropriate forum. (For this competition, you’ll want to use the \u003ca href=\u0022https://www.kaggle.com/c/house-prices-advanced-regression-techniques/discussion\u0022 target=\u0022_blank\u0022\u003eHouse Prices discussion forum\u003c/a\u003e). \u003c/p\u003e\n\n\u003cp\u003eSupport is only able to help with issues that are being experienced by all participants. Before contacting support, please check the discussion forum for information on your problem. If you can’t find it, you can post your problem in the forum so a fellow participant or a Kaggle team member can provide help. The forums are full of useful information on the data, metric, and different approaches. We encourage you to use the forums often. If you share your knowledge, you\u0027ll find that others will share a lot in turn!\u003c/p\u003e\n\n\u003cp\u003eIf your problem persists or it seems to be affecting all participants then please \u003ca href=\u0022https://www.kaggle.com/contact\u0022 target=\u0022_blank\u0022\u003econtact us\u003c/a\u003e.\u003c/p\u003e","mimeType":"text/html","name":"Frequently Asked Questions","isPublished":true}],"databundleVersionId":868283,"databundleVersions":[],"submissionsAreDisabled":false,"hasLeaderboard":true,"finalLeaderboardHasBeenVerified":false,"witholdFinalLeaderboardUntilItHasBeenVerified":false,"isPrivate":false,"publicLeaderboardMessage":"","privateLeaderboardMessage":"","disablePrizeIndicator":false,"hasKernels":true,"hasSolutionFile":true,"userRankMultiplier":0.0,"needsPhoneVerification":false,"scoringIsMax":false,"rawDataUrl":"/c/5407/publicleaderboarddata.zip","canSubmitModel":false,"mySubmissionsCount":5,"mostRecentSubmissionStatus":{"id":24320951,"name":"Predicted.csv","privateScoreFormatted":null,"publicScoreFormatted":"0.18025","previousBestPublicScoreFormatted":null,"submissionStatus":"complete","error":null,"estimatedWaitDurationMilliseconds":null,"estimatedScoreDurationMilliseconds":null,"remainingDailySubmissions":null,"totalSubmissionsInLine":0,"elapsedWaitDurationMilliseconds":861,"elapsedScoreDurationMilliseconds":449,"dateSubmitted":"2021-12-15T05:44:13.473Z","competitionName":"House Prices - Advanced Regression Techniques","competitionSlug":"house-prices-advanced-regression-techniques","userDisplayName":"Ramya Subramanya","userName":"ramyasubramanya","priority":"normal","isBenchmark":false,"downloadUrl":"/submissions/24320951/24320951.raw"},"isCompetitionHost":false,"allowTeamMergers":true,"hostSegments":[],"hostSegmentTitle":"GettingStarted","canParticipate":true,"isCompetitionPending":false,"competitionHasLaunched":true,"competitionHasEnded":false,"shareToken":null,"ownerTwitter":"kaggle","externalCompetitionThumbnailImageUrl":"https://storage.googleapis.com/kaggle-competitions/kaggle/5407/logos/thumb76_76.png","competitionUrl":"/c/house-prices-advanced-regression-techniques","mergerDeadlineHasPassed":false,"categories":{"tags":[{"id":14101,"name":"tabular data","fullPath":"data type \u003e tabular data","listingUrl":"/competitions?sortBy=relevance\u0026group=all\u0026search=tag%3A%27tabular data%27","description":null,"datasetCount":2527,"competitionCount":128,"notebookCount":2059,"tagUrl":"/tags/tabular-data","displayName":"Tabular Data","fontAwesomeIcon":""},{"id":14203,"name":"regression","fullPath":"technique \u003e regression","listingUrl":"/competitions?sortBy=relevance\u0026group=all\u0026search=tag%3A%27regression%27","description":null,"datasetCount":512,"competitionCount":21,"notebookCount":3471,"tagUrl":"/tags/regression","displayName":"Regression","fontAwesomeIcon":""},{"id":0,"name":"rmsle","fullPath":"","listingUrl":"","description":"Square root of the average of the squared natural logarithm (plus one) error. Useful when it\u0027s more important to accurately predict lower magnitude values rather than precisely predicting higher magnitude values.","datasetCount":0,"competitionCount":0,"notebookCount":0,"tagUrl":"","displayName":"","fontAwesomeIcon":""}],"type":"competition"},"competitionHostClaims":{"readSettings":false,"writeSettings":false,"writeDescriptions":false,"writeDeadline":false,"readSubmissions":false,"writeSubmissions":false,"invalidateSubmissions":false,"rescoreSubmissions":false,"readEvaluation":false,"writeEvaluation":false,"writeTeamVisibility":false,"updateCategory":false,"launchCompetition":false,"writeBenchmarks":false,"writeTeamMergers":false,"isCompetitionHost":false},"newEntrantDeadlineHasPassed":false,"onlyAllowKernelSubmissions":false,"requiresSameRowCountInSubmissionAndSolution":true,"enableLazyLeaderboard":false,"rulesRequired":true,"usesSynchronousReruns":false,"modelFileName":null,"modelFileSizeBytes":0,"disableKernelsPublishing":false,"@wf": "Competitions.Legacy.CompetitionDtoWireFormat"});performance && performance.mark && performance.mark("CompetitionContainer.componentCouldBootstrap");</script>
+
+</div><div data-testid="competition-detail-render-tid" class="sc-kOSLtt gmDWlo competition"><div class="sc-hXDLww jprrHV"><div class="competition-header__container"><div class="pageheader"><div class="pageheader__container competition-header"><div class="competition-header__top"><div class="competition-header__top-image" style="background-image: url(&quot;https://storage.googleapis.com/kaggle-competitions/kaggle/5407/logos/header.png?t=2021-04-23-18-16-53&quot;);"></div><div class="pageheader__top--safe"><div class="competition-header__classification"><div class="competition-header__classification-icon-wrapper"><div class="competition-header__classification-icon"><span class="fa fa-university"></span></div></div><p class="competition-header__classification-text">GettingStarted prediction Competition</p></div><div class="competition-header__meta"><div class="competition-header__info"><h1 class="competition-header__title">House Prices - Advanced Regression Techniques</h1><h2 class="competition-header__subtitle">Predict sales prices and practice feature engineering, RFs, and gradient boosting</h2></div></div><div class="competition-header__details"><div class="competition-header__details"><ul class="horizontal-list"><li class="horizontal-list-item horizontal-list-item--bullet horizontal-list-item--default"><span class="competition-header__org"><span class="competition-header__org-thumbnail"><img role="presentation" alt="" class="competition-header__org-thumbnail-image" src="./House Prices - Advanced Regression Techniques _ Kaggle_files/thumbnail.png"></span><span class="competition-header__organization-name">Kaggle</span></span></li><li class="horizontal-list-item horizontal-list-item--bullet horizontal-list-item--default">5,405 teams</li><li class="horizontal-list-item horizontal-list-item--bullet horizontal-list-item--default"><span><span title="Ongoing">Ongoing</span></span></li></ul></div></div></div></div><div class="sc-elSRXu fgjIaR" style="height: 47px; width: 950px;"><div offset="64" class="sc-tMipn cVQVVK"></div><div class="sc-kDemHk enUoHh" style="top: 64px; height: 47px; width: 950px;"><div class="pageheader__bottom pageheader__bottom"><div class="OverflowX_OverflowXWrapper--jgkcy4 bglLBl Header_PageHeaderOverflowX--5lh72e elylks"><div class="OverflowX_OverflowXBody--1whfcnd iXGPkf"><div class="competition-header__nav-wrapper"><nav class="pageheader__nav pageheader__nav--competition "><div class="pageheader__nav-wrapper"><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview" title="overview" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--overview"><span><span>Overview</span></span></a><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data" title="data" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--data"><span><span>Data</span></span></a><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/code" title="code" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--code"><span><span>Code</span></span></a><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/discussion" title="discussion" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--discussion"><span><span>Discussion</span></span></a><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/leaderboard" title="leaderboard" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--leaderboard"><span><span>Leaderboard</span></span></a><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/rules" title="rules" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--rules"><span><span>Rules</span></span></a><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/team" title="team" class="pageheader__left-links pageheader__left-links--with-onclick" id="pageheader-nav-item--team"><span><span>Team</span></span></a><div class="pageheader__right-links-wrapper"><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/submissions" title="submissions" class="pageheader__right-links pageheader__right-links--with-onclick pageheader__right-links--selected" id="pageheader-nav-item--submissions"><span><span>My Submissions</span></span></a></div></div></nav><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/submit" tabindex="0" class="sc-jXcxbT eINlL"><button class="sc-eEVmNe evMPpD" tabindex="-1" role="button"><span class="sc-jJMGnK sc-hiKfDv lkfHZi dRsyqq">Submit Predictions</span></button></a><div class="mdc-menu-surface--anchor"><button aria-label="more_horiz" class="sc-jSFjdj ejQuUp sc-kmrohN cMUENN Header_StyledMoreMenu--1faqvz0 htIAMf google-material-icons">more_horiz</button></div><div role="alertdialog" aria-modal="true" class="sc-cvdZrU dpthPX mdc-dialog"><div class="mdc-dialog__container"><div class="mdc-dialog__surface"></div></div><div class="mdc-dialog__scrim"></div></div></div></div></div></div><div></div><div class="pageheader__transition"></div></div></div></div></div></div><div><div class="smart-list smart-list--standard undefined"><div class="content-box"><div><div class="content-box__title-bar"><div class="ContentBox_Title--6fbrxj loqRqY" style="line-height: 46px;"><div><span>5 submissions for<a class="competition-submissions__team-link" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/team">Ramya Subramanya</a></span></div></div><div class="content-box__right-side"><div class="smart-list__title-bar-right-side-wrapper"><div><div class="smart-list__sort"><p class="smart-list__sort-label">Sort by</p><div class="Select KaggleSelect Select--single"><div class="Select-control"><div class="Select-multi-value-wrapper" id="react-select-2--value"><div class="Select-placeholder">Select...</div><div aria-expanded="false" aria-owns="" aria-activedescendant="react-select-2--value" aria-disabled="false" class="Select-input" role="combobox" tabindex="0" style="border: 0px; width: 1px; display: inline-block;"></div></div><span class="Select-arrow-zone"><span class="Select-arrow"></span></span></div></div></div></div><div></div></div></div></div></div><div class="content-box__content-section"><div class="content-box__subtitle-bar"><div class="selection-group__wrapper"><div class="OverflowX_OverflowXWrapper--jgkcy4 bglLBl"><div class="OverflowX_OverflowXBody--1whfcnd iXGPkf"><ul class="selection-group__items"><li role="button" class="selection-group__child selection-group__child--selected"><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/submissions?sortBy=null&amp;group=all" title="All">All</a></li><li role="button" class="selection-group__child selection-group__child--unselected"><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/submissions?sortBy=null&amp;group=successful" title="Successful">Successful</a></li><li role="button" class="selection-group__child selection-group__child--unselected"><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/submissions?sortBy=null&amp;group=selected" title="Selected">Selected</a></li></ul></div></div><div class="selection-group__filters"><div class="smart-list__sub-title-right"></div></div></div></div><div class="smart-list__content"><div class="sc-gnEkum bztPCX"><div class="competition-submissions__list-header"><div class="competition-submissions__info">Submission and Description</div><div class="competition-submissions__score">Public Score</div></div><div role="button"><div class="competition-submissions__list-item"><div class="competition-submissions__info"><div class="competition-submissions__info-name" title="Predicted.csv"><a class="competition-submissions__info-link" href="https://www.kaggle.com/submissions/24320951/24320951.raw">Predicted.csv</a></div><p class="competition-submissions__info-time"><span title="Wed Dec 15 2021 11:14:13 GMT+0530 (India Standard Time)">7 days ago</span> by <a href="https://www.kaggle.com/ramyasubramanya">Ramya Subramanya</a></p><div class="inline-text-editor__toggle-container"><div role="button" class="inline-text-editor__placeholder competition-submissions__info-text inline-text-editor__readonly">add submission details</div><span role="button" class="fa fa-pencil inline-text-editor__button inline-text-editor__button--hover"></span></div></div><div class="competition-submissions__score">0.18025</div></div></div><div role="button"><div class="competition-submissions__list-item"><div class="competition-submissions__info"><div class="competition-submissions__info-name" title="KaggleSubmission.zip"><a class="competition-submissions__info-link" href="https://www.kaggle.com/submissions/24320927/24320927.raw">KaggleSubmission.zip</a></div><p class="competition-submissions__info-time"><span title="Wed Dec 15 2021 11:10:54 GMT+0530 (India Standard Time)">7 days ago</span> by <a href="https://www.kaggle.com/ramyasubramanya">Ramya Subramanya</a></p><div class="inline-text-editor__toggle-container"><div role="button" class="inline-text-editor__placeholder competition-submissions__info-text inline-text-editor__readonly">add submission details</div><span role="button" class="fa fa-pencil inline-text-editor__button inline-text-editor__button--hover"></span></div></div><div class="competition-submissions__score"><div class="sc-eirqVv gMXsZh" data-tip="true" data-for="tooltip_components_2b483497-7138-48cd-a414-9c4ac3a01b8e" currentitem="false"><div class="competition-submissions__score-error"><span>Error</span></div><div class="__react_component_tooltip tfed1ec98-80b1-4a50-a259-1a42f070dd9f place-top type-dark" id="tooltip_components_2b483497-7138-48cd-a414-9c4ac3a01b8e" data-id="tooltip"><style aria-hidden="true">
+  	.tfed1ec98-80b1-4a50-a259-1a42f070dd9f {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.tfed1ec98-80b1-4a50-a259-1a42f070dd9f.place-top {
+        margin-top: -10px;
+    }
+    .tfed1ec98-80b1-4a50-a259-1a42f070dd9f.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .tfed1ec98-80b1-4a50-a259-1a42f070dd9f.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .tfed1ec98-80b1-4a50-a259-1a42f070dd9f.place-bottom {
+        margin-top: 10px;
+    }
+    .tfed1ec98-80b1-4a50-a259-1a42f070dd9f.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .tfed1ec98-80b1-4a50-a259-1a42f070dd9f.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .tfed1ec98-80b1-4a50-a259-1a42f070dd9f.place-left {
+        margin-left: -10px;
+    }
+    .tfed1ec98-80b1-4a50-a259-1a42f070dd9f.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .tfed1ec98-80b1-4a50-a259-1a42f070dd9f.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .tfed1ec98-80b1-4a50-a259-1a42f070dd9f.place-right {
+        margin-left: 10px;
+    }
+    .tfed1ec98-80b1-4a50-a259-1a42f070dd9f.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .tfed1ec98-80b1-4a50-a259-1a42f070dd9f.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-lbVvki IEnHC">ERROR: Unexpected Column:  'train&lt;-read.csv("train.csv")' (Line 1, Column 1)
+ERROR: Required column 'Id' could not be found
+ERROR: Required column 'SalePrice' could not be found</div></div></div></div></div></div><div role="button"><div class="competition-submissions__list-item"><div class="competition-submissions__info"><div class="competition-submissions__info-name" title="KaggleSubmission.zip"><a class="competition-submissions__info-link" href="https://www.kaggle.com/submissions/24320907/24320907.raw">KaggleSubmission.zip</a></div><p class="competition-submissions__info-time"><span title="Wed Dec 15 2021 11:09:05 GMT+0530 (India Standard Time)">7 days ago</span> by <a href="https://www.kaggle.com/ramyasubramanya">Ramya Subramanya</a></p><div class="inline-text-editor__toggle-container"><div role="button" class=" competition-submissions__info-text inline-text-editor__readonly">Predicting House Sale Price using Ridge Regression technique</div><span role="button" class="fa fa-pencil inline-text-editor__button inline-text-editor__button--hover"></span></div></div><div class="competition-submissions__score"><div class="sc-eirqVv gMXsZh" data-tip="true" data-for="tooltip_components_f5c6a29f-7358-481a-a5cf-a16fcb2b4a4d" currentitem="false"><div class="competition-submissions__score-error"><span>Error</span></div><div class="__react_component_tooltip ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04 place-top type-dark" id="tooltip_components_f5c6a29f-7358-481a-a5cf-a16fcb2b4a4d" data-id="tooltip"><style aria-hidden="true">
+  	.ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04.place-top {
+        margin-top: -10px;
+    }
+    .ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04.place-bottom {
+        margin-top: 10px;
+    }
+    .ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04.place-left {
+        margin-left: -10px;
+    }
+    .ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04.place-right {
+        margin-left: 10px;
+    }
+    .ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .ta7b4a0e9-9f47-4ca2-9d2f-9373b8fede04.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-lbVvki IEnHC">ERROR: Unexpected Column:  'setwd(dir = "D:\\IIM - K\\SUPERVISED MACHINE LEARNING\\REGRESSION\\REG-PRACTICALS\\HousePrices(Kaggl...' (Line 1, Column 1)
+ERROR: Required column 'Id' could not be found
+ERROR: Required column 'SalePrice' could not be found</div></div></div></div></div></div><div role="button"><div class="competition-submissions__list-item"><div class="competition-submissions__info"><div class="competition-submissions__info-name" title="KaggleSubmission.zip"><a class="competition-submissions__info-link" href="https://www.kaggle.com/submissions/24320897/24320897.raw">KaggleSubmission.zip</a></div><p class="competition-submissions__info-time"><span title="Wed Dec 15 2021 11:07:35 GMT+0530 (India Standard Time)">7 days ago</span> by <a href="https://www.kaggle.com/ramyasubramanya">Ramya Subramanya</a></p><div class="inline-text-editor__toggle-container"><div role="button" class="inline-text-editor__placeholder competition-submissions__info-text inline-text-editor__readonly">add submission details</div><span role="button" class="fa fa-pencil inline-text-editor__button inline-text-editor__button--hover"></span></div></div><div class="competition-submissions__score"><div class="sc-eirqVv gMXsZh" data-tip="true" data-for="tooltip_components_48c622a8-2de7-4e2b-b1f9-6bea31d6ad95" currentitem="false"><div class="competition-submissions__score-error"><span>Error</span></div><div class="__react_component_tooltip tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1 place-top type-dark" id="tooltip_components_48c622a8-2de7-4e2b-b1f9-6bea31d6ad95" data-id="tooltip"><style aria-hidden="true">
+  	.tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1.place-top {
+        margin-top: -10px;
+    }
+    .tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1.place-bottom {
+        margin-top: 10px;
+    }
+    .tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1.place-left {
+        margin-left: -10px;
+    }
+    .tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1.place-right {
+        margin-left: 10px;
+    }
+    .tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .tb13d7c78-c07b-4b6d-82f9-0f716caa1ef1.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-lbVvki IEnHC">ERROR: Unexpected Column:  'setwd(dir = "D:\\IIM - K\\SUPERVISED MACHINE LEARNING\\REGRESSION\\REG-PRACTICALS\\HousePrices(Kaggl...' (Line 1, Column 1)
+ERROR: Required column 'Id' could not be found
+ERROR: Required column 'SalePrice' could not be found</div></div></div></div></div></div><div role="button"><div class="competition-submissions__list-item"><div class="competition-submissions__info"><div class="competition-submissions__info-name" title="KaggleSubmission.zip"><a class="competition-submissions__info-link" href="https://www.kaggle.com/submissions/24320889/24320889.raw">KaggleSubmission.zip</a></div><p class="competition-submissions__info-time"><span title="Wed Dec 15 2021 11:07:02 GMT+0530 (India Standard Time)">7 days ago</span> by <a href="https://www.kaggle.com/ramyasubramanya">Ramya Subramanya</a></p><div class="inline-text-editor__toggle-container"><div role="button" class=" competition-submissions__info-text inline-text-editor__readonly">Predicting House Prices using Ridge Regression technique.</div><span role="button" class="fa fa-pencil inline-text-editor__button inline-text-editor__button--hover"></span></div></div><div class="competition-submissions__score"><div class="sc-eirqVv gMXsZh" data-tip="true" data-for="tooltip_components_02250d09-6dcc-4930-9546-218e6613b7b4" currentitem="false"><div class="competition-submissions__score-error"><span>Error</span></div><div class="__react_component_tooltip t2216799f-0f5e-4c73-824e-fb2fca2ddfc6 place-top type-dark" id="tooltip_components_02250d09-6dcc-4930-9546-218e6613b7b4" data-id="tooltip"><style aria-hidden="true">
+  	.t2216799f-0f5e-4c73-824e-fb2fca2ddfc6 {
+	    color: #fff;
+	    background: #222;
+	    border: 1px solid transparent;
+  	}
+
+  	.t2216799f-0f5e-4c73-824e-fb2fca2ddfc6.place-top {
+        margin-top: -10px;
+    }
+    .t2216799f-0f5e-4c73-824e-fb2fca2ddfc6.place-top::before {
+        border-top: 8px solid transparent;
+    }
+    .t2216799f-0f5e-4c73-824e-fb2fca2ddfc6.place-top::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        bottom: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-top-color: #222;
+        border-top-style: solid;
+        border-top-width: 6px;
+    }
+
+    .t2216799f-0f5e-4c73-824e-fb2fca2ddfc6.place-bottom {
+        margin-top: 10px;
+    }
+    .t2216799f-0f5e-4c73-824e-fb2fca2ddfc6.place-bottom::before {
+        border-bottom: 8px solid transparent;
+    }
+    .t2216799f-0f5e-4c73-824e-fb2fca2ddfc6.place-bottom::after {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        top: -6px;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #222;
+        border-bottom-style: solid;
+        border-bottom-width: 6px;
+    }
+
+    .t2216799f-0f5e-4c73-824e-fb2fca2ddfc6.place-left {
+        margin-left: -10px;
+    }
+    .t2216799f-0f5e-4c73-824e-fb2fca2ddfc6.place-left::before {
+        border-left: 8px solid transparent;
+    }
+    .t2216799f-0f5e-4c73-824e-fb2fca2ddfc6.place-left::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        right: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-left-color: #222;
+        border-left-style: solid;
+        border-left-width: 6px;
+    }
+
+    .t2216799f-0f5e-4c73-824e-fb2fca2ddfc6.place-right {
+        margin-left: 10px;
+    }
+    .t2216799f-0f5e-4c73-824e-fb2fca2ddfc6.place-right::before {
+        border-right: 8px solid transparent;
+    }
+    .t2216799f-0f5e-4c73-824e-fb2fca2ddfc6.place-right::after {
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        left: -6px;
+        top: 50%;
+        margin-top: -4px;
+        border-right-color: #222;
+        border-right-style: solid;
+        border-right-width: 6px;
+    }
+  </style><div class="sc-lbVvki IEnHC">ERROR: Unexpected Column:  'setwd(dir = "D:\\IIM - K\\SUPERVISED MACHINE LEARNING\\REGRESSION\\REG-PRACTICALS\\HousePrices(Kaggl...' (Line 1, Column 1)
+ERROR: Required column 'Id' could not be found
+ERROR: Required column 'SalePrice' could not be found</div></div></div></div></div></div><div class="smart-list__message"><span>No more submissions to show</span></div><div class="sc-cvxAMf fnuqaP"></div></div></div></div></div></div></div><div role="alertdialog" aria-modal="true" class="sc-cvdZrU dpthPX mdc-dialog"><div class="mdc-dialog__container"><div class="mdc-dialog__surface"><h2 class="sc-dIsUp sc-bqGGPW sc-fTZpSt eCPBNe iPexDg bcvdhv">Please read the competition rules</h2><div class="sc-dAMTah ivpXQd"><a role="button" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/rules" target="_blank"><img src="./House Prices - Advanced Regression Techniques _ Kaggle_files/thumb76_76.png" alt="Competition Rules" class="sc-jybsko cYDJLu"></a><p class="sc-kfYoZR sc-fKgJPI jaxPpm cxbltl"><a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/rules" target="_blank" class="sc-iBzEeX sc-efHYUO dGLXPo jtJktC">House Prices - Advanced Regression Techniques Rules</a></p></div><div class="sc-bTJQgd sc-gqsVif crMrTS cUmgMA">By clicking on the "I Understand and Accept" button below, you agree to be bound by the competition rules.</div><div class="sc-hQYpqk cDuRCe"><button class="sc-eEVmNe evMPpD" tabindex="0" role="button"><span class="sc-jJMGnK sc-hiKfDv lkfHZi dRsyqq">I Understand and Accept</span></button></div></div></div><div class="mdc-dialog__scrim"></div></div></div></div><div aria-live="assertive" aria-atomic="true" aria-hidden="true" class="sc-dGIKmk jFtens mdc-snackbar"><div class="mdc-snackbar__surface"><div role="status" aria-live="polite" class="mdc-snackbar__label"><div style="display: none;"></div></div><div class="mdc-snackbar__actions"></div></div></div><div id="nav-footer" class="sc-dwxYdI iEWGFn"></div></div><div class="sc-EhTUr fyeWZK"></div><div aria-live="assertive" aria-atomic="true" aria-hidden="true" class="sc-ffgBur kXyKmk mdc-snackbar mdc-snackbar--leading"><div class="mdc-snackbar__surface"><div role="status" aria-live="polite" class="mdc-snackbar__label"><div style="display: none;"></div></div><div class="mdc-snackbar__actions"></div></div></div></div></div>
+<div data-component-name="NavigationContainer" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({"navigationType":"BOTH_NAV"});performance && performance.mark && performance.mark("NavigationContainer.componentCouldBootstrap");</script>
+<div id="site-body" class="hide">
+    
+<div data-component-name="CompetitionsApp" style="display: flex; flex-direction: column; flex: 1 0 auto;"></div><script class="kaggle-component" nonce="">var Kaggle=window.Kaggle||{};Kaggle.State=Kaggle.State||[];Kaggle.State.push({});performance && performance.mark && performance.mark("CompetitionsApp.componentCouldBootstrap");</script>
+
+</div>
+
+
+
+    <!-- Cheers, web-5df5dc7f9c-7jff6p. -->
+
+  </main>
+
+
+
+<div class="sc-ByBTK dCUsPg sc-bxLXlR cevTtD mdc-menu-surface"><div role="document"><div class="sc-jVSGNQ hzsGOz"><div tabindex="0" class="sc-kGVuwA kyEhLJ"><h5 class="sc-bkbkJK sc-iemWCZ dWSziQ hKymwP">No Active Events</h5><br><p class="sc-bCwfaz sc-iwajpm jLqmUy kydRHc">Create notebooks  or datasets and keep track of their status here.</p><br><div class="sc-bA-DTon IPtEP"><a href="https://www.kaggle.com/code/welcome" target="_blank" tabindex="0" class="sc-jXcxbT eINlL"><button class="sc-eEVmNe ehZbNQ" tabindex="-1" role="button"><i color="#FFFFFF" sizevalue="18px" class="rmwc-icon google-material-icons sc-gKAaRy eoZVBq">add</i><span class="sc-jJMGnK sc-hiKfDv lkfHZi dRsyqq">New Notebook</span></button></a><a href="https://www.kaggle.com/datasets/new" target="_blank" tabindex="0" class="sc-jXcxbT eINlL"><button class="sc-eEVmNe ehZbNQ" tabindex="-1" role="button"><i color="#FFFFFF" sizevalue="18px" class="rmwc-icon google-material-icons sc-gKAaRy eoZVBq">add</i><span class="sc-jJMGnK sc-hiKfDv lkfHZi dRsyqq">New Dataset</span></button></a></div></div><ul class="km-list"><li class="sc-cOifOu haQoIp"><div class="sc-Arkif bTgwaG sc-QxirK ePBUTr"><a class="sc-jgPyTC fuJtcf"><div class="sc-khIgEk hQhHpX"><div class="sc-hTRkXV enlJuL"><div class="sc-biHcxt duZDU"><i emphasis="high" sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-hfVBHA cUtlan">auto_awesome_motion</i><div color="#FAE041" class="sc-fiCYzP dwjhCT">0</div></div></div><div class="sc-iCoGMd sc-dlMDgC sc-iNiQyp cHRTxu kpPvTx hLSLbm"><p class="sc-bCwfaz sc-iwajpm eTBoyV kydRHc">0 Active Events</p></div></div></a><div class="sc-gSYDnn eHfJyT"><i emphasis="high" sizevalue="24px" role="button" tabindex="0" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm">expand_more</i></div></div></li></ul></div></div></div><div aria-hidden="true" class="mdc-menu sc-jHNicF iXyCox mdc-menu-surface"><div role="menu" class="mdc-list mdc-menu__items mdc-list"><div role="menuitem" tabindex="0" class="sc-GvhzO bpDBPH mdc-ripple-upgraded sc-GvhzO bpDBPH mdc-list-item"><div class="sc-bXexck kmvQjn"><i sizevalue="24px" class="rmwc-icon google-material-icons sc-gKAaRy iExPwm sc-gsWcmt grZHMV">bookmark_border</i><p class="sc-bCwfaz sc-iwajpm jLqmUy kydRHc">Bookmark</p></div></div></div></div></body></html>
